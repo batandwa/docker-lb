@@ -1,0 +1,8 @@
+lb:
+  image: dockerfile/nginx
+  container_name: lb
+  ports:
+    - 80
+  volumes:
+    - ./config/nginx_lb.conf: /etc/nginx/conf.d/lb.conf
+  restart: always

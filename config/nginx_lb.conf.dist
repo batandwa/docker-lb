@@ -1,0 +1,13 @@
+http {
+  upstream st_michael {
+    server 172.17.0.19:80;
+  }
+
+  server {
+    listen 80;
+    server_name st-michael.lamp1.ca.batandwa.me;
+    location / {
+      proxy_pass http://st_michael;
+    }
+  }
+}
