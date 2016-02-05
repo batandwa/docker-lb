@@ -1,13 +1,11 @@
-http {
-  upstream st_michael {
-    server 172.17.0.19:80;
-  }
+upstream example {
+    server x.x.x.x:80;
+}
 
-  server {
+server {
     listen 80;
-    server_name st-michael.lamp1.ca.batandwa.me;
+    server_name example.com;
     location / {
-      proxy_pass http://st_michael;
+        proxy_pass http://example;
     }
-  }
 }
